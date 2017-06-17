@@ -543,6 +543,14 @@ var rainbow = {
  *   write
  *
  */
+ function Pen (color) {
+  this.color = color;
+ }
+
+ Pen.prototype.write = function(message) {
+  return this.color + ': ' + message;
+ };
+
 
 
 /* Step 31
@@ -571,6 +579,22 @@ var rainbow = {
  *   grow
  *
  */
+ function Garden (plantsTotal, isWatered) {
+  this.plantsTotal = plantsTotal;
+  this.isWatered = false;
+ }
+
+ Garden.prototype.water = function () {
+  this.isWatered = true;
+ }
+
+ Garden.prototype.grow =function () {
+  if(this.isWatered === true) {
+    return this.plantsTotal++;
+  } else {
+    return false;
+  }
+ };
 
 
 /* Step 32
