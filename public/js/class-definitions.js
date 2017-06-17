@@ -613,6 +613,17 @@ var rainbow = {
  *   removePlanet
  *
  */
+ function SolarSystem () {
+  this.planets = [];
+ }
+
+ SolarSystem.prototype.addPlanet = function (planet) {
+  this.planets.push(planet);
+ }
+
+ SolarSystem.prototype.removePlanet = function (planet) {
+  this.planets.pop();
+ }
 
 
 /* Step 33
@@ -647,6 +658,8 @@ var rainbow = {
  *   marries
  *
  */
+
+
 
 
 /* Step 34
