@@ -361,11 +361,11 @@ var rainbow = {
   if(beers.hasOwnProperty(beer)){
     if(typeof beers[beer] === 'string') {
       //console.log(beers[beer])
-      return 'This ' + beer  + ' is ' + beers[beer] + '.';
+      return "This " + beer  + " is " + beers[beer] + ".";
     }
     if(typeof beers[beer] === 'object') {
       //console.log(beers[beer])
-      return 'This ' + beer  + ' is ' + beers[beer][0] + ' and ' + beers[beer][1] + '.';
+      return "This " + beer  + " is " + beers[beer][0] + " and " + beers[beer][1] + ".";
     }
   } else {
     return false;
@@ -403,6 +403,9 @@ var rainbow = {
  * @return {String}
  *
  */
+ function listLivingOrgClass () {
+
+ }
 
 
 /* Step 26
@@ -424,6 +427,19 @@ var rainbow = {
  * @return {String}
  *
  */
+ function favoritePlanet(planet){
+  if(planets.indexOf(planet) > -1) {
+    //console.log(planet);
+    var min = Math.floor((planets.length -1));
+    //console.log(planets);
+    var max = 0;
+    var randomPlanet = Math.floor(Math.random()) * (max - min) + min;
+    return "I'm from " + planet + ", but I wish I could go to " + planets[randomPlanet];
+  } else {
+    return planet + " is not a planet!";
+  }
+}
+
 
 
 /* Step 27
@@ -448,6 +464,22 @@ var rainbow = {
  *   earnMoney
  *
  */
+ class Person {
+  constructor (name, money, age, gender) {
+    this.name = name;
+    this.money = money;
+    this.age = age;
+    this.gender = gender;
+  }
+
+  spendMoney (bills) {
+    this.money -= bills;
+  }
+
+  earnMoney (income) {
+    this.money += income;
+  }
+ }
 
 
 /* Step 28
@@ -461,6 +493,14 @@ var rainbow = {
  * @return {String}
  *
  */
+ function purchaseLaptop (laptop) {
+  if(laptopCosts.hasOwnProperty(laptop)) {
+    return laptopCosts[laptop].toString();
+  } else {
+    return -1;
+  }
+
+ }
 
 
 /* Step 29
@@ -474,6 +514,13 @@ var rainbow = {
  * @return {Bool}
  *
  */
+ function canTalkAbout (club) {
+  if(club !== 'Fight Club') {
+    return true;
+  } else {
+    return false;
+  }
+ }
 
 
 /* Step 30
