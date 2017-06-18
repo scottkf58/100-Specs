@@ -394,6 +394,7 @@ var rainbow = {
  }
 
 
+
 /* Step 25
  *
  * Define a function named "listLivingOrgClass" that
@@ -490,6 +491,7 @@ var rainbow = {
  }
 
 
+
 /* Step 28
  *
  * Define a function named "purchaseLaptop" that takes
@@ -511,6 +513,7 @@ var rainbow = {
  }
 
 
+
 /* Step 29
  *
  * Define a function named "canTalkAbout" that takes
@@ -529,6 +532,7 @@ var rainbow = {
     return false;
   }
  }
+
 
 
 /* Step 30
@@ -605,6 +609,7 @@ var rainbow = {
  };
 
 
+
 /* Step 32
  *
  * Define an ES5 class named "SolarSystem" with a property
@@ -632,6 +637,7 @@ var rainbow = {
  SolarSystem.prototype.removePlanet = function (planet) {
   this.planets.pop();
  }
+
 
 
 /* Step 33
@@ -701,8 +707,6 @@ var rainbow = {
 
 
 
-
-
 /* Step 34
  *
  * Define an ES5 class named "Stapler" with properties "color"
@@ -744,7 +748,7 @@ var rainbow = {
  * Add a method named 'addDiscipline' that takes a string as an argument and
  * adds it to the discipline property. Return the value of the discipline property
  *
- * Add a method named 'checkDisciple' that takes a string as an argument and
+ * Add a method named 'checkDiscipline' that takes a string as an argument and
  * checks if the argument can be found in the discipline property. Return false
  * if it is not found otherwise return back true.
  *
@@ -773,6 +777,46 @@ var rainbow = {
  *   addDiscovery
  *
  */
+ Scientist.prototype = Object.create(Person.prototype, {
+  constructor : Person
+ });
+
+ function Scientist (name, money, age, gender, disciplines, discoveries) {
+  this.name = name;
+  this.money = money;
+  this.age = age;
+  this.gender = gender;
+  this.disciplines = [];
+  this.discoveries = [];
+ }
+
+ Scientist.prototype.addDiscipline = function (string) {
+  this.disciplines.push(string);
+  return this.disciplines;
+ }
+
+ Scientist.prototype.checkDiscipline = function (string) {
+  if(this.disciplines.indexOf(string) >= 0){
+    return true;
+  } else {
+    return false;
+  }
+ }
+
+ Scientist.prototype.addDiscovery = function (string) {
+  this.discoveries.push(string);
+
+  if(this.discoveries.indexOf(string) === 0) {
+    return "I discovered " + this.discoveries + ".";
+  }
+  if(this.discoveries.indexOf(string) === 1) {
+    return "I discovered " + this.discoveries[0] + " and " + this.discoveries[1] + ".";
+  }
+  if(this.discoveries.indexOf(string) === 2) {
+    return "I discovered " + this.discoveries[0] + ", " + this.discoveries[1] + ", and " + this.discoveries[2] + ".";
+  }
+ }
+
 
 
 /* Step 36
@@ -795,6 +839,18 @@ var rainbow = {
  *   rob
  *
  */
+ function BankAccount (balance, owner) {
+  this.balance = balance;
+  this.owner = owner;
+ }
+
+ BankAccount.prototype.withdraw = function (amount) {
+
+ }
+
+ BankAccount.prototype.deposit = function (amount) {
+
+ }
 
 
 /* Step 37
@@ -968,6 +1024,10 @@ var rainbow = {
  * @param {string} species The animal species
  * @param {string} gender  male or female
  */
+ function Animal (species, gender) {
+  this.species = species;
+  this.gender = gender;
+ }
 
 
 /**
@@ -977,6 +1037,10 @@ var rainbow = {
  * @param {string} make The vehicle's make
  * @param {string} model The vehicle's model
  */
+ function Vehicle (make, model) {
+  this.make = make;
+  this.model = model;
+ }
 
 
 /**
@@ -988,6 +1052,14 @@ var rainbow = {
  * value of the sides property to null.
  *
  */
+ function Shape (sides) {
+  this.sides = sides;
+  if(sides >= 3) {
+    this.sides = sides;
+  } else {
+    this.sides = null;
+  }
+ }
 
 
 /**
@@ -998,6 +1070,11 @@ var rainbow = {
  * @param {boolean} isOpen     Whether the box is opened or closed
  */
 
+ function Box (contents, isOpen) {
+  this.contents = contents;
+  this.isOpen = null;
+ }
+
 
 /**
  * Step 54
@@ -1005,6 +1082,9 @@ var rainbow = {
  * Door class
  * @param {boolean} isOpen Whether the door is opened or closed
  */
+ function Door (isOpen) {
+  this.isOpen = null;
+ }
 
 
 /**
@@ -1014,6 +1094,10 @@ var rainbow = {
  * @param {number} size  The shoe size
  * @param {string} color The shoe color
  */
+ function Shoe (size, color) {
+  this.size = size;
+  this.color = color;
+ }
 
 
 /**
@@ -1022,6 +1106,9 @@ var rainbow = {
  * House class
  * @param {number} stories How many stories tall the house is
  */
+ function House (stories) {
+  this.stories = stories;
+ }
 
 
 /**
@@ -1030,6 +1117,9 @@ var rainbow = {
  * Lightbulb class
  * @param {boolean} isOn Whether the light is on or off
  */
+ function Lightbulb (isOn) {
+  this.isOn = null;
+ }
 
 
 /**
@@ -1038,6 +1128,9 @@ var rainbow = {
  * Cookie class
  * @param {string} flavor The cookie's flavor
  */
+ function Cookie (flavor) {
+  this.flavor = flavor;
+ }
 
 
 /**
@@ -1046,6 +1139,7 @@ var rainbow = {
  * Meal class
  * @param {Array} foods All the foods in the meal
  */
+
 
 
 /**
