@@ -403,9 +403,17 @@ var rainbow = {
  * @return {String}
  *
  */
- function listLivingOrgClass () {
+ function listLivingOrgClass(){
+  var ul = document.createElement('ul');
+    for (var i = 0; i < livingOrganismClassification.length; i++ ){
+       var ol = document.createElement('li');
+       var orgText = document.createTextNode(livingOrganismClassification[i]);
+       ol.appendChild(orgText);
+       ul.appendChild(ol);
+    }
+    return ul.outerHTML;
+}
 
- }
 
 
 /* Step 26
@@ -658,6 +666,39 @@ var rainbow = {
  *   marries
  *
  */
+ PrincessLeia.prototype = Object.create(Person.prototype, {
+  constructor : Person
+ });
+
+ function PrincessLeia (name, money, age, gender) {
+  this.name = name;
+  this.money = money;
+  this.age = age;
+  this.gender = gender;
+  this.isInTrouble = null;
+ }
+
+ PrincessLeia.prototype.shootsGun = function () {
+  this.isInTrouble = false;
+  return "Leia shoots her gun wildly";
+ }
+
+ PrincessLeia.prototype.getsInTrouble = function () {
+  this.isInTrouble = true;
+  return "Help me Obi-wan Kenobi, you're my only hope";
+ }
+
+ PrincessLeia.prototype.marries = function (lover) {
+  if(lover === 'Han Solo') {
+    return true;
+  } else if (lover === 'Luke Skywalker') {
+    return 'Gross!';
+  } else {
+    return false;
+  }
+
+ }
+
 
 
 
@@ -679,6 +720,19 @@ var rainbow = {
  *   staplePapers
  *
  */
+ function Stapler(color, maxPapers){
+  this.color = color;
+  this.maxPapers = maxPapers;
+ }
+
+ Stapler.prototype.staplePapers = function (numPapers) {
+  if(numPapers <= this.maxPapers) {
+    return true;
+  } else {
+    return false;
+  }
+ }
+
 
 
 /* Step 35
