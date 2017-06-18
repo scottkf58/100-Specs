@@ -1072,7 +1072,7 @@ var rainbow = {
 
  function Box (contents, isOpen) {
   this.contents = contents;
-  this.isOpen = null;
+  this.isOpen = isOpen;
  }
 
 
@@ -1083,7 +1083,7 @@ var rainbow = {
  * @param {boolean} isOpen Whether the door is opened or closed
  */
  function Door (isOpen) {
-  this.isOpen = null;
+  this.isOpen = isOpen;
  }
 
 
@@ -1118,7 +1118,7 @@ var rainbow = {
  * @param {boolean} isOn Whether the light is on or off
  */
  function Lightbulb (isOn) {
-  this.isOn = null;
+  this.isOn = isOn;
  }
 
 
@@ -1139,6 +1139,9 @@ var rainbow = {
  * Meal class
  * @param {Array} foods All the foods in the meal
  */
+ function Meal (foods) {
+  this.foods = foods;
+ }
 
 
 
@@ -1149,44 +1152,48 @@ var rainbow = {
 
 
 // Create 2 different species of animals
-var george;
-var nemo;
+var george = new Animal('Monkey', 'male');
+var nemo = new Animal('Fish', 'male');
+
 
 // Create 2 different vehicles
-var civic;
-var forte;
+var civic = new Vehicle('Honda', "Civic");
+var forte = new Vehicle('KIA', 'Forte');
 
 // Create 2 shapes with different numbers of sides
-var square;
-var hexagon;
+var square = new Shape(4);
+var hexagon = new Shape(6);
 
 // Create 2 boxes
-var catBox;
-var christmasPresent;
+var cat = new Animal('Cat', 'female');
+var catBox = new Box(cat, true);
+var christmasPresent = new Box('gifts', false);
 
 // Create 2 doors
-var automaticDoor;
-var bankVault;
+var automaticDoor = new Door(true);
+var bankVault = new Door(false);
 
 // Create 2 shoes
-var rubySlippers;
-var dressShoes;
+var rubySlippers = new Shoe(7, 'red');
+var dressShoes = new Shoe(10, 'black');
 
 // Create 2 houses
-var singleStory;
-var twoStory;
+var singleStory = new House(1);
+var twoStory = new House(2);
 
 // Create 2 lightbulbs
-var incandescent;
-var halogen;
+var incandescent = new Lightbulb(true);
+var halogen = new Lightbulb(false);
+
 
 // Create 2 cookies of different flavors
-var chocolateChip;
-var gingerbread;
+var chocolateChip = new Cookie('chocolate');
+var gingerbread = new Cookie('gingerbread');
 
 // Create 2 different meals
-var breakfast;
-var dinner;
+var breakfast = new Meal('cereal and milk');
+console.log(breakfast);
+var dinner = new Meal('fish and vegetables');
 
 
  /* Steps 81 to 90
