@@ -1413,8 +1413,16 @@ var dinner = new Meal('fish and vegetables');
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
  *
  */
- Meal.prototype.containsJunkFood = function () {
+ var junkFood = ["chips", "soda", "ice cream", "popcorn", "candy"];
 
+ Meal.prototype.containsJunkFood = function(){
+   for(var i = 0; i < junkFood.length; i++){
+     if(this.foods.indexOf(junkFood[i]) > -1){
+       return true;
+     } else {
+       return false;
+     }
+   }
  }
 
 
@@ -1431,9 +1439,10 @@ var dinner = new Meal('fish and vegetables');
  * and assign the values to each variable below.
  *
  */
-var warmBloodedAnimal = new Animal("Bird", "male").isWarmBlooded();
-var coldBloodedAnimal = new Animal("Fish", "both").isWarmBlooded();
-var notWarmOrColdAnimal = new Animal("Donkey", "none").isWarmBlooded();
+ var warmBloodedAnimal = new Animal("Monkey", "male").isWarmBlooded();
+ var coldBloodedAnimal = new Animal("Fish", "male").isWarmBlooded();
+ var notWarmOrColdAnimal = new Animal("Dog", "female").isWarmBlooded();
+
 
 
 
@@ -1443,8 +1452,10 @@ var notWarmOrColdAnimal = new Animal("Donkey", "none").isWarmBlooded();
  * and assign the values to each variable below.
  *
  */
-var streetDriving;
-var forwardDriving;
+ var streetDriving = new Vehicle("Lexus", "IS").drive("801 South");
+ var forwardDriving = new Vehicle("BMW", "M3").drive(100);
+
+
 
 
  /* Step 93
@@ -1453,8 +1464,9 @@ var forwardDriving;
  * and assign the values to each variable below.
  *
  */
-var decagon;
-var polygon;
+ var decagon = new Shape(10).getType();
+ var polygon = new Shape("Too many").getType();
+
 
 
 /* Step 94
@@ -1463,8 +1475,10 @@ var polygon;
  * and assign the values to each variable below.
  *
  */
-var openAClosedBox;
-var closeAnOpenBox;
+ var openAClosedBox = new Box("toys", false).openBox();
+ var closeAnOpenBox = new Box("shoes", true).openBox();
+
+
 
 
  /* Step 95
@@ -1473,8 +1487,8 @@ var closeAnOpenBox;
  * and assign the values to each variable below.
  *
  */
-var openAClosedDoor;
-var closeAnOpenDoor;
+ var openAClosedDoor = new Door(false).openClose();
+ var closeAnOpenDoor = new Door(true).openClose();
 
 
 /* Step 96
@@ -1483,8 +1497,8 @@ var closeAnOpenDoor;
  * and assign the values to each variable below.
  *
  */
-var redShoesSize7;
-var blackShoesSize10;
+ var redShoesSize7 = new Shoe(7, "red").findShoes();
+ var blackShoesSize10 = new Shoe(10, "black").findShoes();
 
 
  /* Step 97
@@ -1493,8 +1507,8 @@ var blackShoesSize10;
  * and assign the values to each variable below.
  *
  */
-var farTooTallAStory;
-var shortStory;
+ var farTooTallAStory = new House(100).isATallStory(1);
+ var shortStory = new House(1).isATallStory(100);
 
 
  /* Step 98
@@ -1503,8 +1517,9 @@ var shortStory;
  * and assign the values to each variable below.
  *
  */
-var kitchenLightsOn;
-var porchLightsOff;
+ var kitchenLightsOn = new Lightbulb(true).flipSwitch("on");
+ var porchLightsOff = new Lightbulb(false).flipSwitch("off");
+
 
 
  /* Step 99
@@ -1513,8 +1528,8 @@ var porchLightsOff;
  * and assign the values to each variable below.
  *
  */
-var cookieMonsterPwns;
-var cookieMonsterBlocked;
+var cookieMonsterPwns = new Cookie("chocolate").swipedByCookieMonster("Monday");
+var cookieMonsterBlocked = new Cookie("Cookie Monster missed his chance").swipedByCookieMonster("Not Monday");
 
 
  /* Step 100
@@ -1523,5 +1538,7 @@ var cookieMonsterBlocked;
  * and assign the values to each variable below.
  *
  */
-var badForYou;
-var goodForYou;
+var badForYou = new Meal(["chips", "soda", "alcohol"]).containsJunkFood();
+var goodForYou = new Meal(["salad", "more vegetables"]).containsJunkFood();
+
+
