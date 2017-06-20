@@ -106,6 +106,7 @@
   money: 890,
   age: 20,
   gender: gender.female
+
 };
 
 
@@ -125,6 +126,7 @@
   'laughingsquid.com': '162.159.247.97',
   'slumlordhosting.com': '198.61.179.126',
   'jsonformatter.curiousconcept.com': '104.28.5.70'
+
 };
 
 
@@ -148,6 +150,7 @@
   Firefox: 'mozilla.org',
   Sleipnir: 'fenrir-inc.com',
   Konqueror: 'konqueror.org'
+
  }
 
 
@@ -331,8 +334,9 @@ var rainbow = {
  * @return {Bool}
  *
  */
- function installLinux (linux){
-  if(linuxFlavors.indexOf(linux) > -1){
+ function installLinux (linux) {
+  // check if parameter exists in obj
+  if(linuxFlavors.indexOf(linux) > -1) {
     return true;
   } else {
     return false;
@@ -357,14 +361,15 @@ var rainbow = {
  * @return {Bool when False, String when True}
  *
  */
- function drink(beer){
-  if(beers.hasOwnProperty(beer)){
+ function drink (beer) {
+  if(beers.hasOwnProperty(beer)) {
     if(typeof beers[beer] === 'string') {
       //console.log(beers[beer])
       return "This " + beer  + " is " + beers[beer] + ".";
     }
     if(typeof beers[beer] === 'object') {
       //console.log(beers[beer])
+      //console.log(beer);
       return "This " + beer  + " is " + beers[beer][0] + " and " + beers[beer][1] + ".";
     }
   } else {
@@ -405,14 +410,11 @@ var rainbow = {
  *
  */
  function listLivingOrgClass(){
-  var ul = document.createElement('ul');
-    for(var i = 0; i < livingOrganismClassification.length; i++ ) {
-       var ol = document.createElement('li');
-       var orgText = document.createTextNode(livingOrganismClassification[i]);
-       ol.appendChild(orgText);
-       ul.appendChild(ol);
-    }
-    return ul.outerHTML;
+  var list = '';
+  for ( var i = 0; i < livingOrganismClassification.length; i++ ) {
+    list += livingOrganismClassification[i];
+  }
+  return `<ul> <li>${list}</li> </ul>`;
 }
 
 
